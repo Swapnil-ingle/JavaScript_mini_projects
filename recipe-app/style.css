@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: #bdd4e7;
+    background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.mobile-container {
+    background-color: white;
+    width: 400px;
+    box-shadow: 0 0 10px 2px #1616161a;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+img {
+    max-width: 100%;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+header input {
+    background-color: rgb(228, 228, 228);
+    border: none;
+    border-radius: 3px;
+    padding: 0.5rem 1rem;
+    font-family: inherit;
+}
+
+header button {
+    background-color: transparent;
+    color: rgb(98, 98, 98);
+    border: none;
+    font-size: 1.5rem;
+    margin-left: 10px;
+}
+
+.fav-container {
+    background-color: rgba(228, 228, 228, 0.897);
+    padding: 0.25rem 0.1rem;
+    text-align: center;
+}
+
+.fav-meals {
+    background-color: rgba(207, 207, 207, 0.897);
+    height: 140px;
+    display: flex;
+    flex-flow: row;
+    overflow-x: scroll;
+}
+
+.fav-meals div {
+    padding: 0.7rem;
+    width: 100px;
+    height: 120px;
+    min-width: 100px;
+    min-height: 100px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.fav-meals img {
+    border-radius: 50%;
+    border: 2px solid ivory;
+    box-shadow: 0 0 10px 2px #1818181a;
+}
+
+.fav-meals li {
+    display: flex;
+    flex-flow: row;
+}
+
+.fav-meals li img {
+    width: 100%;
+}
+
+.fav-meals li img {
+    align-items: center;
+    border: 2px solid white;
+    box-shadow: 0 0 10px 2px #3333331a;
+    border-radius: 50%;
+    object-fit: cover;
+    height: 80px;
+    width: 80px;
+}
+
+.meal {
+    box-shadow: 0 0 10px 2px #3333331a;
+    border-radius: 3px;
+    margin: 1.5rem;
+    overflow: hidden;
+}
+
+.meal-header {
+    position: relative;
+}
+
+.meal-header .random {
+    position: absolute;
+    background-color: ivory;
+    top: 1rem; 
+    left: 5px;
+    padding: 0.25rem 0.5rem;
+    border-bottom-right-radius: 3px;
+}
+
+.meal-header img {
+     height: 250px;
+     width: 100%;
+     object-fit: cover;
+}
+
+.meal-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.meal-body h4 {
+    margin: 0;
+}
+
+.meal-body .fav-btn {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: darkgray;
+    cursor: pointer;
+}
+
+.meal-body .fav-btn.active {
+    color: tomato;
+}
