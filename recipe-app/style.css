@@ -116,10 +116,12 @@ header button {
 }
 
 .meal-header .random {
+    font-family: inherit;
+    color: #313362;
+    font-weight: bold;
     position: absolute;
-    background-color: ivory;
+    background-color: #f6b83be7;
     top: 1rem; 
-    left: 5px;
     padding: 0.25rem 0.5rem;
     border-bottom-right-radius: 3px;
 }
