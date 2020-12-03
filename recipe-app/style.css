@@ -7,7 +7,6 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    background-color: #bdd4e7;
     background-image: linear-gradient(315deg, #bdd4e7 0%, #8693ab 74%);
     display: flex;
     align-items: center;
@@ -16,7 +15,8 @@ body {
 }
 
 .mobile-container {
-    background-color: white;
+    background-color: #f1dfd1;
+    background-image: linear-gradient(315deg, #f1dfd1 0%, #f6f0ea 74%);
     width: 400px;
     box-shadow: 0 0 10px 2px #1616161a;
     border-radius: 4px;
@@ -30,13 +30,14 @@ img {
 header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 1rem;
 }
 
 header input {
-    background-color: rgb(228, 228, 228);
+    background-color: #30336b52;
     border: none;
+    width: 100%;
     border-radius: 3px;
     padding: 0.5rem 1rem;
     font-family: inherit;
@@ -44,20 +45,24 @@ header input {
 
 header button {
     background-color: transparent;
-    color: rgb(98, 98, 98);
+    color: #30336b;
     border: none;
     font-size: 1.5rem;
     margin-left: 10px;
 }
 
 .fav-container {
-    background-color: rgba(228, 228, 228, 0.897);
+    background-color: #30336bf6;
     padding: 0.25rem 0.1rem;
     text-align: center;
 }
 
+.fav-container h3 {
+    color: ivory;
+}
+
 .fav-meals {
-    background-color: rgba(207, 207, 207, 0.897);
+    background-color: #b6b3c1;
     height: 140px;
     display: flex;
     flex-flow: row;
@@ -76,7 +81,7 @@ header button {
 
 .fav-meals img {
     border-radius: 50%;
-    border: 2px solid ivory;
+    border: 2px solid #2c3e50;
     box-shadow: 0 0 10px 2px #1818181a;
 }
 
@@ -91,7 +96,7 @@ header button {
 
 .fav-meals li img {
     align-items: center;
-    border: 2px solid white;
+    border: 2px solid #2c3e50;
     box-shadow: 0 0 10px 2px #3333331a;
     border-radius: 50%;
     object-fit: cover;
@@ -130,17 +135,19 @@ header button {
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
+    background-color: #30336bf6;
 }
 
 .meal-body h4 {
     margin: 0;
+    color: ivory;
 }
 
 .meal-body .fav-btn {
     background-color: transparent;
     border: none;
     font-size: 1.5rem;
-    color: darkgray;
+    color: ivory;
     cursor: pointer;
 }
 
