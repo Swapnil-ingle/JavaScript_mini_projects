@@ -53,17 +53,19 @@ header button {
 
 .fav-container {
     background-color: #30336bf6;
-    padding: 0.25rem 0.1rem;
+    padding-top: 0.1rem;
     text-align: center;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .fav-container h3 {
+    margin: 8px;
     color: ivory;
 }
 
 .fav-meals {
-    background-color: #f6b83b;
-    /* background-color: #b6b3c1; */
+    background-color: #b6b3c1;
     height: 140px;
     display: flex;
     flex-flow: row;
@@ -82,7 +84,7 @@ header button {
 
 .fav-meals img {
     border-radius: 50%;
-    border: 2px solid ivory;
+    border: 3px solid ivory;
     box-shadow: 0 0 10px 2px #1818181a;
 }
 
@@ -105,6 +107,10 @@ header button {
     width: 80px;
 }
 
+.fav-meals span {
+    font-weight: 0.8px;
+}
+
 .meal {
     box-shadow: 0 0 10px 2px #3333331a;
     border-radius: 3px;
@@ -119,7 +125,7 @@ header button {
 .meal-header .random {
     font-family: inherit;
     color: #313362;
-    font-weight: bold;
+    font-weight: 5px;
     position: absolute;
     background-color: #f6b83be7;
     top: 1rem; 
