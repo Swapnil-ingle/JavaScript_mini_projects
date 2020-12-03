@@ -62,7 +62,8 @@ header button {
 }
 
 .fav-meals {
-    background-color: #b6b3c1;
+    background-color: #f6b83b;
+    /* background-color: #b6b3c1; */
     height: 140px;
     display: flex;
     flex-flow: row;
@@ -81,7 +82,7 @@ header button {
 
 .fav-meals img {
     border-radius: 50%;
-    border: 2px solid #2c3e50;
+    border: 2px solid ivory;
     box-shadow: 0 0 10px 2px #1818181a;
 }
 
