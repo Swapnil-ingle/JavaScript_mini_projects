@@ -66,9 +66,11 @@ header button {
 
 .fav-meals {
     background-color: #b6b3c1;
-    height: 140px;
+    min-height: 80px;
     display: flex;
     flex-flow: row;
+    justify-content: center;
+    align-items: center;
     overflow-x: scroll;
 }
 
@@ -78,8 +80,9 @@ header button {
     height: 120px;
     min-width: 100px;
     min-height: 100px;
-    text-overflow: ellipsis;
     overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 1px;
 }
 
 .fav-meals img {
@@ -88,27 +91,29 @@ header button {
     box-shadow: 0 0 10px 2px #1818181a;
 }
 
-.fav-meals li {
-    display: flex;
-    flex-flow: row;
-}
-
-.fav-meals li img {
-    width: 100%;
-}
-
-.fav-meals li img {
-    align-items: center;
-    border: 2px solid #2c3e50;
-    box-shadow: 0 0 10px 2px #3333331a;
-    border-radius: 50%;
-    object-fit: cover;
-    height: 80px;
-    width: 80px;
-}
-
 .fav-meals span {
     font-weight: 0.8px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: inherit;
+}
+
+.fav-meals .clearFavMeal {
+    position: absolute;
+    font-size: 2rem;
+    background-color: transparent;
+    border: none;
+    margin-left: 50px;
+    color: firebrick;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.fav-meals div:hover .clearFavMeal {
+    color: firebrick;
+    opacity: 1;
 }
 
 .meal {
