@@ -17,7 +17,7 @@ body {
 .mobile-container {
     background-color: #f1dfd1;
     background-image: linear-gradient(315deg, #f1dfd1 0%, #f6f0ea 74%);
-    width: 400px;
+    width: 350px;
     height: 615px;
     box-shadow: 0 0 10px 2px #1616161a;
     border-radius: 4px;
