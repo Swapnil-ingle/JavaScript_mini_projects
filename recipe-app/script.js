@@ -81,7 +81,7 @@ function addMealToFav(mealData) {
     const favMeal = document.createElement("div");
 
     favMeal.innerHTML = `
-        <button value=${mealData.idMeal} onClick="toggleMealLike(this.value)" class="clearFavMeal">
+        <button value=${mealData.idMeal} onClick="removeMealFromFav(this.value)" class="clearFavMeal">
             <i class="fas fa-times-circle"></i>
         </button>
         <img src="${mealData.strMealThumb}" alt="${mealData.strMeal}"><br>
@@ -89,6 +89,11 @@ function addMealToFav(mealData) {
     `;
 
     favMealsList.appendChild(favMeal);
+}
+
+function removeMealFromFav(mealId) {
+    _removeMealFromLocalStorage(mealId);
+    fetchFavMeals();
 }
 
 function _addMealToLocalStorage(mealId) {
