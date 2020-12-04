@@ -18,9 +18,19 @@ body {
     background-color: #f1dfd1;
     background-image: linear-gradient(315deg, #f1dfd1 0%, #f6f0ea 74%);
     width: 400px;
+    height: 615px;
     box-shadow: 0 0 10px 2px #1616161a;
     border-radius: 4px;
-    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.scrollbar-hidden {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
 }
 
 img {
@@ -69,8 +79,8 @@ header button {
     min-height: 80px;
     display: flex;
     flex-flow: row;
-    justify-content: center;
-    align-items: center;
+    justify-content: left;
+    align-items: left;
     overflow-x: scroll;
 }
 
@@ -81,8 +91,8 @@ header button {
     min-width: 100px;
     min-height: 100px;
     overflow: hidden;
-    text-overflow: ellipsis;
     margin: 1px;
+    position: relative;
 }
 
 .fav-meals img {
@@ -105,10 +115,11 @@ header button {
     font-size: 2rem;
     background-color: transparent;
     border: none;
-    margin-left: 50px;
+    top: 0;
+    right: 0;
     color: firebrick;
     cursor: pointer;
-    opacity: 0;
+    opacity: 0.3;
 }
 
 .fav-meals div:hover .clearFavMeal {

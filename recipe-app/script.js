@@ -1,5 +1,7 @@
 const meals = document.getElementById('meals');
 const favMealsList = document.getElementById('fav-meals');
+const searchBtn = document.getElementById('search');
+const searchTerm = document.getElementById('search-term');
 
 getRandomMeal();
 fetchFavMeals();
@@ -16,13 +18,14 @@ async function getMealById(id) {
 }
 
 async function getMealsBySearch(term) {
-    return await _extractMealDataFromAPI("https://www.themealdb.com/api/json/v1/1/search.php?s=" + term);
+    const apiUrl = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + term;
+    return await _extractMealDataFromAPI(apiUrl, false);
 }
 
-async function _extractMealDataFromAPI(apiEndpointURL) {
+async function _extractMealDataFromAPI(apiEndpointURL, limit = true) {
     const resp = await fetch(apiEndpointURL);
     const respData = await resp.json();
-    return respData.meals[0];
+    return limit ? respData.meals[0] : respData.meals;
 }
 
 function _addMeal(mealData, random = false) {
@@ -36,27 +39,26 @@ function _addMeal(mealData, random = false) {
         </div>
         <div class="meal-body">
             <h4>${mealData.strMeal}</h4>
-            <button value="${mealData.idMeal}" onClick="toggleMealLike(this.value)" class="fav-btn" id="fav-btn"><i class="fas fa-heart"></i>
+            <button value="${mealData.idMeal}" class="fav-btn" id="fav-btn"><i class="fas fa-heart"></i>
             </button>
         </div>
     `;
 
+    const favBtn = meal.querySelector(".meal-body .fav-btn");
+    favBtn.addEventListener('click', () => {
+        if (favBtn.classList.contains("active")) {
+            _removeMealFromLocalStorage(mealData.idMeal);
+            favBtn.classList.remove("active");
+        } else {
+            _addMealToLocalStorage(mealData.idMeal);
+            favBtn.classList.add("active");
+        }
+    
+        fetchFavMeals();
+    });
+
     meal.classList.add('meal');
     meals.appendChild(meal);
-}
-
-function toggleMealLike(mealId) {
-    const btn = document.getElementById("fav-btn");
-
-    if (btn.classList.contains("active")) {
-        _removeMealFromLocalStorage(mealId);
-        btn.classList.remove("active");
-    } else {
-        _addMealToLocalStorage(mealId);
-        btn.classList.add("active");
-    }
-
-    fetchFavMeals();
 }
 
 async function fetchFavMeals() {
@@ -95,6 +97,19 @@ function removeMealFromFav(mealId) {
     _removeMealFromLocalStorage(mealId);
     fetchFavMeals();
 }
+
+searchBtn.addEventListener('click', async () => {
+    const searchKey = searchTerm.value;
+    
+    if (searchKey.length <= 0) {
+        return;
+    }
+
+    const meals = await getMealsBySearch(searchKey);
+    meals.forEach((meal) => {
+        _addMeal(meal);
+    });
+});
 
 function _addMealToLocalStorage(mealId) {
     const mealIds = _getMealsFromLocalStorage();
