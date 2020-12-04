@@ -110,6 +110,14 @@ header button {
     width: inherit;
 }
 
+.fav-meals h4 {
+    display: flex;
+    width: 100%;
+    color: #191a35;
+    padding-left: 55px;
+    padding-right: 55px;
+}
+
 .fav-meals .clearFavMeal {
     position: absolute;
     font-size: 2rem;

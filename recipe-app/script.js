@@ -30,11 +30,11 @@ async function _extractMealDataFromAPI(apiEndpointURL, limit = true) {
 
 function _addMeal(mealData, random = false) {
     const meal = document.createElement('div');
-    let randomRecipeHeaderHTML = `<span class="random">Random Recipe</span>`;
+    let recipeFlagHeaderHTML = `<span class="random">${random ? "Random Recipe" : "Search Result"}</span>`;
 
     meal.innerHTML = `
         <div class="meal-header">
-            ${random ? randomRecipeHeaderHTML : ""}
+            ${recipeFlagHeaderHTML}
             <img src="${mealData.strMealThumb}" alt="${mealData.strMeal}">
         </div>
         <div class="meal-body">
@@ -67,7 +67,7 @@ async function fetchFavMeals() {
     const mealIds = _getMealsFromLocalStorage();
 
     if (mealIds.length == 0) {
-        const noFavMealsAddedSpan = document.createElement('span');
+        const noFavMealsAddedSpan = document.createElement('h4');
         noFavMealsAddedSpan.innerHTML = `Like a recipe to start tracking`;
         favMealsList.appendChild(noFavMealsAddedSpan);
     }
@@ -105,8 +105,17 @@ searchBtn.addEventListener('click', async () => {
         return;
     }
 
-    const meals = await getMealsBySearch(searchKey);
-    meals.forEach((meal) => {
+    const resultMeals = await getMealsBySearch(searchKey);
+
+    if (resultMeals === null || resultMeals.length <= 0) {
+        alert("No meals found!");
+        return;
+    }
+
+    // Clear the existing meals to make way for searched results
+    meals.innerHTML = "";
+
+    resultMeals.forEach((meal) => {
         _addMeal(meal);
     });
 });
