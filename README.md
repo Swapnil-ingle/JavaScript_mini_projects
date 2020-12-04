@@ -9,4 +9,4 @@ Learning JS by creating JS based (mini) projects.
 
 ## Disclaimer
 
-First time doing front-end development, learning by following projects by [FlorinPop](https://www.youtube.com/watch?v=dtKciwk_si4&t=3865s&ab_channel=FlorinPop) and understanding each concept as we progress and adding more functionality to the app than shown by [FlorinPop](https://www.youtube.com/watch?v=dtKciwk_si4&t=3865s&ab_channel=FlorinPop).
+First time doing front-end development, learning by following projects by [FlorinPop](https://www.youtube.com/watch?v=dtKciwk_si4&t=3865s&ab_channel=FlorinPop) and understanding each concept as we progress and adding more functionality to the app than shown by [FlorinPop](https://www.youtube.com/watch?v=dtKciwk_si4&t=3865s&ab_channel=FlorinPop). Also fixing existing bugs.
