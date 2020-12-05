@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url("https://images.unsplash.com/photo-1542559272-819e1934ac51?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=700&q=80");
+    background-image: url("https://images.unsplash.com/photo-1476673160081-cf065607f449?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1052&q=80");
     min-height: 100vh;
     background-size: cover;
     display: flex;
@@ -22,10 +22,14 @@ h1 {
     font-size: 4rem;
     align-items: center;
     justify-content: center;
+    padding-right: 30px;
+    padding-left: 30px;
     color:#583d72;
 }
 
 h2 {
+    padding-right: 30px;
+    padding-left: 30px;
     font-weight: normal;
     font-size: 3rem;
     align-items: center;
@@ -63,21 +67,21 @@ h2 {
 }
 
 .resetTimerBtn {
-    font-size: 3.5rem;
+    font-size: 3rem;
     border: none;
     background-color: rgba(245, 245, 245, 0.452);
     color: #583d72;
     position: absolute;
     top: 2rem;
-    right: 3rem;
+    right: 2rem;
     border-radius: 2px;
 }
 
 .resetFormContainer {
-    width: 28rem;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .resetFormContainer input {
