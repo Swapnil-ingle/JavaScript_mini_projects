@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Timer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <button class="resetTimerBtn" id="resetTimerBtn">
+        <i class="fas fa-redo-alt"></i>
+    </button>
+
+    <h2>Reset Timer To New Date...</h2>
+
+    <div class="resetFormContainer">
+        <input type="date" name="resetDateInput" id="targetResetDate">
+        <input type="text" name="resetCaptionInput" id="resetCaptionInput" placeholder="Enter new caption">
+        <button onclick="resetTargetDate()" id="targetResetDateBtn"><i class="fas fa-check-square"></i></button>
+    </div>
+</body>
+</html>

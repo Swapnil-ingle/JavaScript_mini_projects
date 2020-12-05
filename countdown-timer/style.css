@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url("https://images.unsplash.com/photo-1542559272-819e1934ac51?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=700&q=80");
+    min-height: 100vh;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-position: center center;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+h1 {
+    font-weight: normal;
+    font-size: 4rem;
+    align-items: center;
+    justify-content: center;
+    color:#583d72;
+}
+
+h2 {
+    font-weight: normal;
+    font-size: 3rem;
+    align-items: center;
+    justify-content: center;
+    color:#583d72;
+    margin: 0 0 5px 5px;
+}
+
+.big-text {
+    font-weight: bold;
+    font-size: 5rem;
+    line-height: 1;
+    margin: 0 2rem;
+}
+
+.countdown-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10rem;
+}
+
+.countdown-el {
+    text-align: center;
+}
+
+.countdown-el {
+    font-size: 0.9rem;
+    color: #03071e;
+}
+
+.countdown-subtitle {
+    color:rebeccapurple;
+}
+
+.resetTimerBtn {
+    font-size: 3.5rem;
+    border: none;
+    background-color: rgba(245, 245, 245, 0.452);
+    color: #583d72;
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    border-radius: 2px;
+}
+
+.resetFormContainer {
+    width: 28rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.resetFormContainer input {
+    background-color: #ffce89;
+    border: none;
+    width: 100%;
+    border-radius: 3px;
+    padding: 0.5rem 1rem;
+    font-family: inherit;
+    margin: 5px;
+}
+
+.resetFormContainer button {
+    background: transparent;
+    border: none;
+    font-size: 2.4rem;
+    color: #583d72;
+}
+
+/* .resetFormContainer input#resetCaptionInput {
+    background-color: rgba(71, 61, 139, 0.644);
+} */
