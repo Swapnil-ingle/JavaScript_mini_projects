@@ -7,6 +7,8 @@ getRandomMeal();
 fetchFavMeals();
 
 async function getRandomMeal() {
+    // Clear the existing meals if any.
+    meals.innerHTML = "";
     const randomMeal = await _extractMealDataFromAPI("https://www.themealdb.com/api/json/v1/1/random.php")
 
     _addMeal(randomMeal, true)
@@ -35,6 +37,9 @@ function _addMeal(mealData, random = false) {
     meal.innerHTML = `
         <div class="meal-header">
             ${recipeFlagHeaderHTML}
+            <button class="meal-header reload" id="reloadRandomBtn">
+                <i class="fas fa-redo-alt"></i>
+            </button>
             <img src="${mealData.strMealThumb}" alt="${mealData.strMeal}">
         </div>
         <div class="meal-body">
@@ -55,6 +60,12 @@ function _addMeal(mealData, random = false) {
         }
     
         fetchFavMeals();
+    });
+
+    const reloadrandomBtn = meal.querySelector("#reloadRandomBtn");
+    reloadrandomBtn.addEventListener('click', () => {
+
+        getRandomMeal();
     });
 
     meal.classList.add('meal');
