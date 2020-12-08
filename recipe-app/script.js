@@ -3,6 +3,10 @@ const favMealsList = document.getElementById('fav-meals');
 const searchBtn = document.getElementById('search');
 const searchTerm = document.getElementById('search-term');
 
+const mealPopup = document.getElementById('meal-popup-container');
+const popUpCloseBtn = document.getElementById('close-popup');
+const mealInfoEl = document.getElementById('meal-info');
+
 getRandomMeal();
 fetchFavMeals();
 
@@ -60,12 +64,17 @@ function _addMeal(mealData, random = false) {
         }
     
         fetchFavMeals();
+        event.stopPropagation();
     });
 
     const reloadrandomBtn = meal.querySelector("#reloadRandomBtn");
     reloadrandomBtn.addEventListener('click', () => {
-
         getRandomMeal();
+        event.stopPropagation();
+    });
+
+    meal.addEventListener("click", () => {
+        _renderMealInfo(mealData);
     });
 
     meal.classList.add('meal');
@@ -145,4 +154,27 @@ function _removeMealFromLocalStorage(mealId) {
     const mealIds = _getMealsFromLocalStorage();
 
     localStorage.setItem('mealIds', JSON.stringify(mealIds.filter(id => id !== mealId)));
+}
+
+popUpCloseBtn.addEventListener('click', () => {
+    mealPopup.classList.add('hidden');
+    mealInfoEl.innerHTML = "";
+});
+
+function _renderMealInfo(mealData) {
+    const mealEl = document.createElement('div');
+    mealEl.innerHTML = `
+        <h1>${mealData.strMeal}</h1>
+        <img src="${mealData.strMealThumb}" alt="${mealData.strMeal}">
+        <h2>Recipe</h2>
+        <p>${mealData.strInstructions}</p>
+        <h2>Ingredients</h2>
+        <ui>
+            <li>Ingredient 1 / Measures</li>
+            <li>Ingredient 2 / Measures</li>
+            <li>Ingredient 3 / Measures</li>
+        </ui>
+    `;
+    mealInfoEl.appendChild(mealEl);
+    mealPopup.classList.remove('hidden');
 }

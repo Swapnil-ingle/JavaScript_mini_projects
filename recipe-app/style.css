@@ -118,7 +118,7 @@ header button {
     padding-right: 55px;
 }
 
-.fav-meals .clearFavMeal {
+.fav-meals .clearFavMeal, .close-popup {
     position: absolute;
     font-size: 2rem;
     background-color: transparent;
@@ -140,6 +140,10 @@ header button {
     border-radius: 3px;
     margin: 1.5rem;
     overflow: hidden;
+}
+
+.meal:hover {
+    cursor: pointer;
 }
 
 .meal-header {
@@ -203,4 +207,77 @@ header button {
 
 .meal-body .fav-btn.active {
     color: tomato;
+}
+
+/* Meal Popup Container */
+
+.meal-popup-container {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.meal-popup-container.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.meal-popup {
+    position: relative;
+    background-color: white;
+    max-width: 400px;
+    max-height: 650px;
+    width: 100%;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5px;
+    overflow-y: scroll;
+}
+
+.meal-info h1 {
+    background-color: #30336b;
+    margin: 0;
+    text-align: center;
+    padding: 8px 3px;
+    color: ivory;
+    font-size: 1.7rem;
+    border-radius: 5px;
+}
+
+.meal-info img {
+    margin-top: -5px;
+    border-radius: 5px;
+}
+
+.meal-info h2 {
+    color: #30336b;
+}
+
+.meal-info p,li {
+    padding: 10px 20px;
+    background-color: lavender;
+    border-radius: 5px;
+}
+
+.meal-info img {
+    height: 325px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.close-popup {
+    position: sticky;
+    float: right;
+    opacity: 1;
+    padding: 0;
+    margin: 0;
+}
+
+.close-popup:hover {
+    color: goldenrod;
 }
