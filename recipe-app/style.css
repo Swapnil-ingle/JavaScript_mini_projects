@@ -285,3 +285,16 @@ header button {
 .close-popup:hover {
     color: goldenrod;
 }
+
+
+.low-width {
+    margin: 0;
+    padding: 0;
+}
+
+.yt-btn {
+    border: none;
+    background: transparent;
+    color: red;
+    font-size: 5rem;
+}

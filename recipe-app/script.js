@@ -192,6 +192,12 @@ function _renderMealInfo(mealData) {
         </ul>
         <h2>Recipe</h2>
         <p>${mealData.strInstructions}</p>
+        ${mealData.strYoutube == null ? "":`
+            <h2 class="low-width">Watch on YouTube</h2>
+            <a id="yt-btn" class="yt-btn" href="${mealData.strYoutube}">
+                <i class="fab fa-youtube"></i>
+            </a>
+        `}
     `;
     mealInfoEl.appendChild(mealEl);
     mealPopup.classList.remove('hidden');
