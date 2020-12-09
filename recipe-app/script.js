@@ -101,6 +101,7 @@ async function fetchFavMeals() {
 
 function addMealToFav(mealData) {
     const favMeal = document.createElement("div");
+    favMeal.classList.add('fav-meal');
 
     favMeal.innerHTML = `
         <button value=${mealData.idMeal} onClick="removeMealFromFav(this.value)" class="clearFavMeal">
@@ -111,11 +112,17 @@ function addMealToFav(mealData) {
     `;
 
     favMealsList.appendChild(favMeal);
+
+    favMeal.addEventListener("click", () => {
+        _renderMealInfo(mealData);
+        event.stopPropagation();
+    });
 }
 
 function removeMealFromFav(mealId) {
     _removeMealFromLocalStorage(mealId);
     fetchFavMeals();
+    event.stopPropagation();
 }
 
 searchBtn.addEventListener('click', async () => {
@@ -163,17 +170,28 @@ popUpCloseBtn.addEventListener('click', () => {
 
 function _renderMealInfo(mealData) {
     const mealEl = document.createElement('div');
+    const ingredients = [];
+
+    for (let i=1; i<=20; i++) {
+        if (mealData['strIngredient'+i]) {
+            ingredients.push(
+                `${mealData['strIngredient' + i]} (${mealData['strMeasure' + i]})`)
+        } else {
+            break;
+        }
+    }
+
     mealEl.innerHTML = `
         <h1>${mealData.strMeal}</h1>
         <img src="${mealData.strMealThumb}" alt="${mealData.strMeal}">
+        <h2>Ingredients</h2>
+        <ul>
+            ${ingredients.map(ing => 
+                `<li>${ing}</li>`    
+            ).join('')}
+        </ul>
         <h2>Recipe</h2>
         <p>${mealData.strInstructions}</p>
-        <h2>Ingredients</h2>
-        <ui>
-            <li>Ingredient 1 / Measures</li>
-            <li>Ingredient 2 / Measures</li>
-            <li>Ingredient 3 / Measures</li>
-        </ui>
     `;
     mealInfoEl.appendChild(mealEl);
     mealPopup.classList.remove('hidden');

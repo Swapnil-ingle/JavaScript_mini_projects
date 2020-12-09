@@ -135,6 +135,10 @@ header button {
     opacity: 1;
 }
 
+.fav-meal:hover {
+    cursor: pointer;
+}
+
 .meal {
     box-shadow: 0 0 10px 2px #3333331a;
     border-radius: 3px;
