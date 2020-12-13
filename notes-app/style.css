@@ -22,7 +22,7 @@ body {
     background-color: ivory;
     margin: 20px;
     border-radius: 5px;
-    overflow: hidden;
+    overflow: visible;
     display: relative;
 }
 
