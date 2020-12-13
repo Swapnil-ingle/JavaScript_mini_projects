@@ -93,6 +93,11 @@ function _getNoteTitleFromContent(content) {
     const parsedContent = new DOMParser().parseFromString(marked(content), 'text/html');
     const h1TagEls = parsedContent.getElementsByTagName('h1');
 
+    if (h1TagEls.length <= 0) {
+        const firstLine = content.split('\n')[0];
+        return firstLine.length > 0 ? firstLine : "Could not fetch title. (Write title in 'h1' tag; ex '# Title')";
+    }
+
     return h1TagEls[0].innerText;
 }
 
