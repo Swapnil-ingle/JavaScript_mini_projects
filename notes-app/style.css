@@ -71,7 +71,7 @@ body {
 
 .notes textarea::placeholder {
     font-size: 1.5rem;
-    opacity: 0.8;
+    opacity: 0.3;
     padding: 1rem 1rem;
     color: black;
 }
