@@ -6,17 +6,27 @@
     <title>Notes App</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/1.2.6/marked.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 </head>
 <body>
     <div class="notes">
-        <div class="tools">
-            <button><i class="fas fa-edit"></i></button>
-            <button><i class="fas fa-trash-alt"></i></button>
+            <div class="tools">
+                <button class="main-menu hidden"><i class="fas fa-home"></i></button>
+                <button class="add"><i class="fas fa-plus-circle"></i></button>
+                <button class="edit hidden"><i class="fas fa-edit"></i></button>
+                <button class="delete hidden"><i class="fas fa-trash-alt"></i></button>
+                <button class="save hidden"><i class="fas fa-save"></i></button>
+                <button class="preview hidden"><i class="fas fa-eye"></i></button>
+            </div>
+        <div class="textarea-display hidden"></div>
+        <div class="main scrollbar-hidden">
+            <h2>Saved Notes</h2>
+            <div id="notes-list">
+                <!-- Inserted from JS -->
+            </div>
         </div>
-        <div class="main">
-            <textarea></textarea>    
-        </div>
+        <textarea placeholder="Start Typing Your Note..." class="hidden"></textarea>
     </div>
 </body>
 </html>
