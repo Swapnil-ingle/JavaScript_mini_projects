@@ -31,9 +31,13 @@ homeBtn.addEventListener('click', () => {
 });
 
 function populateNotesList() {
-    notesListEl.innerHTML = '';
-
     let notesData = _getNotesFromLocalStorage();
+
+    if (notesData.length <= 0) {
+        return;
+    }
+
+    notesListEl.innerHTML = '';
 
     notesData.forEach(note => {
         let noteBannerEl = document.createElement('div');
