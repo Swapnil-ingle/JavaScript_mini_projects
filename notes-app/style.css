@@ -67,6 +67,8 @@ body {
     height: 425px;
     font-family: inherit;
     padding: 1rem 1.5rem;
+    border: none;
+    outline: none;
 }
 
 .notes textarea::placeholder {
