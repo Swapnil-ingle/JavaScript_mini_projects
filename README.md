@@ -8,6 +8,7 @@ Learning JS by creating JS based (mini) projects.
 2. [Quiz App](https://rawgit.com/Swapnil-ingle/JavaScript_mini_projects/main/quiz-app/index.html)
 3. [Recipe App](https://rawgit.com/Swapnil-ingle/JavaScript_mini_projects/main/recipe-app/index.html)
 4. [Notes App](https://rawgit.com/Swapnil-ingle/JavaScript_mini_projects/main/notes-app/index.html)
+5. [Todo App](https://rawgit.com/Swapnil-ingle/JavaScript_mini_projects/main/todo-app/index.html)
 
 ## Disclaimer
 
