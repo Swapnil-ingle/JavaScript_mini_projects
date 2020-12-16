@@ -11,19 +11,21 @@ form.addEventListener('submit', e => {
 
 function addTodo(localStorageTodoVal = null, completed = null) {
     const todoText = localStorageTodoVal == null ? input.value : localStorageTodoVal;
-    console.log("Adding todo element: " + todoText);
 
     if (todoText) {
         const todoEl = document.createElement('li');
         todoEl.innerText = todoText;
+        _addRemoveButton(todoEl);
 
         if (completed == true) {
             todoEl.classList.add('completed');
         }
 
         todoEl.addEventListener('click', e => {
-             todoEl.classList.toggle('completed');
-             _updateLs();
+            if (input.value == "") {
+                todoEl.classList.toggle('completed');
+                _updateLs();
+            }
         });
 
         todoEl.addEventListener('contextmenu', e => {
@@ -45,6 +47,26 @@ function loadTodos() {
     todos.forEach(todo => {
         addTodo(todo.text, todo.completed);
     });
+}
+
+function _addRemoveButton(todoEl) {
+    deleteTodoBtnEl = document.createElement('button');
+    deleteTodoBtnEl.classList.add('delete-todo');
+    deleteTodoBtnEl.setAttribute('id', 'delete-todo');
+
+    deleteTodoBtnEl.innerHTML = `
+        <i class="fas fa-times-circle"></i>
+    `;
+
+    deleteTodoBtnEl.addEventListener('click', e => {
+        if (input.value == undefined || input.value == "") {
+            todoEl.remove();
+            _updateLs();
+            e.stopPropagation();
+        }
+    });
+
+    todoEl.appendChild(deleteTodoBtnEl);
 }
 
 function _getTodosFromLS() {

@@ -64,3 +64,17 @@ small {
     margin-top: 3rem;
     color: seagreen;
 }
+
+.delete-todo {
+    font-size: 2rem;
+    padding-right: 10px;
+    background-color: transparent;
+    border: none;
+    color: firebrick;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.delete-todo:hover {
+    color: rgb(171, 127, 214);
+}
