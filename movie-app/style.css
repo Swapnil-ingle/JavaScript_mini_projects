@@ -5,6 +5,39 @@
 }
 
 body {
+    background-color: #22254b;
     font-family: 'Poppins', sans-serif;
     margin: 0;
+}
+
+.movie {
+    background-color: #373b69;
+    border-radius: 5px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.4);
+    width: 300px;
+    margin: 2rem;
+}
+
+.movie img {
+    width: 100%;
+}
+
+.movie-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    color: ivory;
+    letter-spacing: 1px;
+    padding: 0.5rem 1rem 1rem;
+}
+
+.movie-info h3 {
+    margin: 0;
+}
+
+.movie-info span {
+    background-color: #22254b;
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
 }
