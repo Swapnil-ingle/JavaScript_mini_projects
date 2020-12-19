@@ -180,3 +180,8 @@ footer {
     color: #C2E000;
     border: 2px #C2E000 solid;
 }
+
+.no-res-found {
+    color: ivory;
+    font-size: 2rem;
+}

@@ -1,4 +1,7 @@
 var currPageNum = 1;
+var searching = false;
+var searchTerm = null;
+var totalPages = null;
 
 const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=04c35731a5ee918f014970082a0088b1&page=';
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
@@ -20,6 +23,9 @@ async function getMovies(url) {
     const resp = await fetch(url);
     const respData = await resp.json();
     showMovies(respData.results);
+    if (searching) {
+        totalPages = respData.total_pages;
+    }
     renderPageNumbers();
 }
 
@@ -28,16 +34,18 @@ function renderPageNumbers() {
     pageNumberEl.innerHTML = '';
 
     let firstPageToShow = 1;
-    let lastPastToShow = PAGES_TO_SHOW;
-    
+    let lastPageToShow = searching ? 
+        (totalPages < PAGES_TO_SHOW ? totalPages : PAGES_TO_SHOW) 
+        : PAGES_TO_SHOW;
+
     if (currPageNum != 1) {
         firstPageToShow = Math.ceil((currPageNum - (PAGES_TO_SHOW / 2)) > 1 ? 
             (currPageNum - (PAGES_TO_SHOW / 2)) : 1);
-        lastPastToShow = Math.floor(currPageNum + (PAGES_TO_SHOW / 2)) < PAGES_TO_SHOW ?
+        lastPageToShow = Math.floor(currPageNum + (PAGES_TO_SHOW / 2)) < PAGES_TO_SHOW ?
             PAGES_TO_SHOW : Math.floor(currPageNum + (PAGES_TO_SHOW / 2));
     }
 
-    for (let i=firstPageToShow;i<=lastPastToShow;i++) {
+    for (let i=firstPageToShow;i<=lastPageToShow;i++) {
         const pageBtn = document.createElement('button');
         pageBtn.classList.remove('current-page');
         pageBtn.classList.add('page-number-btn');
@@ -51,7 +59,10 @@ function renderPageNumbers() {
         pageBtn.addEventListener('click', e => {
             const newPageNum = parseInt(pageBtn.innerText);
             currPageNum = newPageNum;
-            getMovies(API_URL + currPageNum);
+            const apiURL = searching ? 
+                (SEARCH_API + searchTerm + '&page=' + currPageNum) 
+                : API_URL + currPageNum;
+            getMovies(apiURL);
         });
 
         pageNumberEl.appendChild(pageBtn);
@@ -71,17 +82,33 @@ function getClassByRate(vote) {
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    const searchTerm = search.value;
+    searching = true;
+    searchTerm = search.value;
 
     if (searchTerm) {
-        showMovies(getMovies(SEARCH_API + searchTerm));
+        getMovies(SEARCH_API + searchTerm);
         search.value = '';
+        currPageNum = 1;
     }
 });
 
 function showMovies(movies) {
     // Clear main
     moviesContainerEl.innerHTML = "";
+
+    if (movies.length <= 0) {
+        console.log("No movies...")
+        const noResultFoundEl = document.createElement('div');
+        noResultFoundEl.classList.add('no-res-found');
+
+        noResultFoundEl.innerHTML = `
+            <h3>
+                No Resuts Found
+            </h3>`;
+
+        moviesContainerEl.appendChild(noResultFoundEl);
+        return;
+    }
 
     movies.forEach((movie) => {
         let imgPath = './media/img/404_Img_Not_Found.png';
