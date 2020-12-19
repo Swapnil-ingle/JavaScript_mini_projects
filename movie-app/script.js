@@ -150,7 +150,11 @@ function _paginate(goTo) {
             const currPage = parseInt(child.innerText);
             currPageNum = goTo == 'next' ? currPage + 1 : 
                 (currPage == 1 ? 1 : currPage - 1);
-            getMovies(API_URL + currPageNum);
+            if (!searching) {
+                getMovies(API_URL + currPageNum);
+            } else {
+                getMovies(SEARCH_API + searchTerm + "&page=" + currPageNum);
+            }
         }
     });
 }
