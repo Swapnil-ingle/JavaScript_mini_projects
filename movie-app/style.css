@@ -11,10 +11,14 @@ body {
 }
 
 header {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
     background-color: #373b69;
-    padding: 1.5rem;
+    padding: 1.2rem;
     display: flex;
     justify-content: flex-end;
+    max-height: 5rem;
 }
 
 .search {
@@ -45,11 +49,13 @@ header {
 }
 
 .movies-container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     background-color: #22254b;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-height: 80vh;
+    height: 100%;
     overflow: auto;
 }
 
@@ -125,7 +131,14 @@ header {
     filter: blur(4px);
 }
 
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+
 .page-navbar {
+    position: relative;
     background-color: #373b69;
     display: flex;
     justify-content: space-between;
