@@ -141,12 +141,13 @@ footer {
     position: relative;
     background-color: #373b69;
     display: flex;
+    align-content: center;
     justify-content: space-between;
     padding: 15px;
 }
 
 .page-navbar .prev-page-btn,.next-page-btn,.page-number-btn {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: ivory;
     background-color: transparent;
     border: none;
@@ -163,14 +164,14 @@ footer {
 }
 
 .page-navbar .page-number-btn {
-    margin: 0px 8px;
+    margin: 1px 8px;
 }
 
 .page-navbar .page-number-btn:hover {
     border: 2px #C2E000 solid;
 }
 
-.page-number * {
+.page-number button {
     padding: 0 0.5rem;
     border-radius: 50%;
 }
