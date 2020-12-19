@@ -12,7 +12,7 @@ const pageNumberEl = document.getElementById('page-number');
 const nextPageBtn = document.getElementById('next-page-btn');
 const prevPageBtn = document.getElementById('prev-page-btn');
 
-const PAGES_TO_SHOW = 5; // Works only for odd number of pages
+const PAGES_TO_SHOW = 3; // Works only for odd number of pages
 
 getMovies(API_URL + currPageNum);
 
