@@ -17,7 +17,7 @@ header {
     background-color: #373b69;
     padding: 1.2rem;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     max-height: 5rem;
 }
 
@@ -184,4 +184,17 @@ footer {
 .no-res-found {
     color: ivory;
     font-size: 2rem;
+}
+
+header .logo, a {
+    color: ivory;
+    padding-right: 40px;
+}
+
+.logo h1 {
+    margin: 0;
+}
+
+.logo a:hover {
+    color: #7c82c7;
 }
