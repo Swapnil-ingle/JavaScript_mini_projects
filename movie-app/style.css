@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #22254b;
+    background-color: #373b69;
     font-family: 'Poppins', sans-serif;
     margin: 0;
 }
@@ -37,17 +37,21 @@ header {
     outline: none;
 }
 
-main {
+.movies-container {
+    background-color: #22254b;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    border: 5px black solid;
+    max-height: 80vh;
+    overflow: auto;
 }
 
 .movie {
     background-color: #373b69;
     border-radius: 5px;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.4);
-    width: 300px;
+    width: 250px;
     margin: 1rem;
     overflow: hidden;
     position: relative;
@@ -113,4 +117,46 @@ main {
 
 .movie:hover img {
     filter: blur(4px);
+}
+
+.page-navbar {
+    background-color: #373b69;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.page-navbar .prev-page-btn,.next-page-btn,.page-number-btn {
+    font-size: 1.5rem;
+    color: ivory;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.fa-arrow-circle-right,.fa-arrow-circle-left {
+    font-size: 2.5rem;
+    color: ivory;
+}
+
+.fa-arrow-circle-right:hover,.fa-arrow-circle-left:hover {
+    color: #C2E000;
+}
+
+.page-navbar .page-number-btn {
+    margin: 0px 8px;
+}
+
+.page-navbar .page-number-btn:hover {
+    border: 2px #C2E000 solid;
+}
+
+.page-number * {
+    padding: 0 0.5rem;
+    border-radius: 50%;
+}
+
+.current-page {
+    color: #C2E000;
+    border: 2px #C2E000 solid;
 }
