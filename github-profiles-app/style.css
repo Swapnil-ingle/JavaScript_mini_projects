@@ -130,8 +130,7 @@ main {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    overflow: visible;
+    overflow: hidden;
 }
 
 .user-info h3 {
