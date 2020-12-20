@@ -45,8 +45,7 @@ input {
 input::placeholder {
     padding-left: 9px;
     font-size: 12px;
-    color: lightcoral;
-    opacity: 0.8;
+    color: #faaf7aa2;
     font-style: italic;
 }
 
