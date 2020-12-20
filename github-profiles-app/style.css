@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #7f5a83;
+    background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+    min-height: 100vh;
+}
+
+/* NavBar Styling */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 5rem;
+}
+
+.logo {
+    padding: 0 2rem;
+    color: ivory;
+    margin: 0;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+form {
+    display: flex;
+    padding-right: 1rem;
+}
+
+input {
+    line-height: 1.5rem;
+    border-radius: 15px;
+    background: transparent;
+    border: 2px solid ivory;
+}
+
+input::placeholder {
+    padding-left: 9px;
+    font-size: 12px;
+    color: lightcoral;
+    opacity: 0.8;
+    font-style: italic;
+}
+
+.search-btn {
+    padding-left: 15px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: ivory;
+    font-weight: lighter;
+    cursor: pointer;
+}
+
+.logo:hover,.search-btn:hover {
+    color: lightcoral;
+}
+
+/* Card Styling */
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem 5%;
+    height: 20rem;
+}
+
+.card {
+    margin-top: 10%;
+    top: 30%;
+    left: 20%;
+    border-radius: 10px;
+    background-color: #02101A;
+    height: 20rem;
+    width: 40rem;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4), 
+        20px 20px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Card Info Styling */
+
+.dp {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dp img {
+    border-radius: 50%;
+    width: 80%;
+    height: 9.5rem;
+    object-fit: cover;
+    border: 3px ivory solid;
+    transition: transform .2s;
+}
+
+.dp img:hover {
+    transform: scale(1.2);
+}
+
+/* User info stlying */
+
+.user-info {
+    background-color: #0d324d3d;
+    color: ivory;
+    width: 70%;
+    height: 100%;
+    max-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: visible;
+}
+
+.user-info h3 {
+    margin: 0;
+}
+
+.user-info p {
+    color: #faaf7adc;
+    font-weight: lighter;
+}
+
+.text-info {
+    padding: 0 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 14rem;
+    overflow: auto;
+}
+
+/* User Info Buttons Stlying */
+
+.user-info-btns, .user-info-btns button {
+    color: #f0d3f3;
+    transition: transform .2s;
+}
+
+.user-info-btns span:hover, .user-info-btns button:hover {
+    transform: scale(1.4);
+}
+
+.user-info-btns {
+    padding: 10px 15px;
+    height: 17%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    overflow: auto;
+}
+
+.user-info-btns span {
+    font-size: 1.2rem;
+    font-weight: lighter;
+    transition: transform .2s;
+}
+
+.user-info button {
+    font-size: 1.2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.user-info-btns .large-btn {
+    font-size: 1.5rem;
+}
+
+.user-info button:hover {
+    color: coral;
+}
