@@ -102,10 +102,16 @@ main {
 .dp img {
     border-radius: 50%;
     width: 80%;
-    height: 9.5rem;
+    height: 50%;
     object-fit: cover;
     border: 3px ivory solid;
     transition: transform .2s;
+}
+
+@media screen and (max-width: 575px) {
+    .dp img {
+        height: 30%;
+    }
 }
 
 .dp img:hover {
@@ -130,6 +136,7 @@ main {
 
 .user-info h3 {
     margin: 0;
+    font-size: 1.6rem;
 }
 
 .user-info p {
