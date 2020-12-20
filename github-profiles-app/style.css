@@ -144,11 +144,19 @@ main {
 }
 
 .text-info {
+    width: 100%;
     padding: 0 1rem;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
     max-height: 14rem;
     overflow: auto;
+}
+
+.text-info small {
+    font-weight: lighter;
+    opacity: 0.6;
 }
 
 /* User Info Buttons Stlying */
