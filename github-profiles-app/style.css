@@ -87,6 +87,7 @@ main {
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    transition: transform .5s;
 }
 
 /* Card Info Styling */
@@ -109,8 +110,13 @@ main {
 }
 
 @media screen and (max-width: 575px) {
-    .dp img {
-        height: 30%;
+    main {
+        height: 65vh;
+    }
+
+    .card {
+        transform: rotate(90deg);
+        min-width: 650px;
     }
 }
 
