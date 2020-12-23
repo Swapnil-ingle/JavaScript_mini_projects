@@ -7,16 +7,41 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    background-color: blanchedalmond;
+    background-color: #e9bcb7;
+    background-image: linear-gradient(315deg, #e9bcb7 0%, #29524a 74%);
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    flex-direction: column;
 }
 
 canvas {
     background-color: ivory;
-    border: 2px solid black;
-    width: 500;
-    height: 500;
+    border: 3px solid black;
+}
+
+.toolbox {
+    border: 3px solid black;
+    width: 906px;
+    background-color: rgb(78, 37, 119);
+    padding: 1rem;
+    display: flex;
+}
+
+.toolbox * {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 0.25rem;
+    font-size: 2rem;
+    border: none;
+    width: 50px;
+    margin: 0.25rem;
+    height: 50px;
+}
+
+.toolbox > *:last-child {
+    margin-left: auto;
 }
