@@ -23,7 +23,7 @@ canvas {
 
 .toolbox {
     border: 3px solid black;
-    width: 906px;
+    width: 706px;
     background-color: rgb(78, 37, 119);
     padding: 1rem;
     display: flex;
@@ -40,8 +40,9 @@ canvas {
     width: 50px;
     margin: 0.25rem;
     height: 50px;
+    border-radius: 4px;
 }
 
-.toolbox > *:last-child {
+input#color {
     margin-left: auto;
 }
