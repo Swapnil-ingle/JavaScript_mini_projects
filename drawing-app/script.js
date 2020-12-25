@@ -12,6 +12,10 @@ let y = undefined;
 let isPressed = false;
 let color = 'black';
 
+clearBtn.addEventListener('click', () => {
+    window.location.reload();
+});
+
 canvas.addEventListener('mousedown', (e) => {
     isPressed = true;
     x = e.offsetX;
