@@ -16,9 +16,10 @@ body {
 }
 
 main {
-   background-color: slategray;
-   width: 600px;
-   height: 800px;
+   background-color: rgb(54, 27, 82);
+   color: ivory;
+   width: 500px;
+   height: 600px;
    border-radius: 10px;
    display: flex;
    flex-direction: column;
@@ -30,10 +31,10 @@ main {
    20px 20px 30px rgba(0, 0, 0, 0.2);
 }
 
-.pwd-gen-input div * {
+/* .pwd-gen-input div * {
     display: block;
     margin: 15px 0;
-}
+} */
 
 .pwd-gen-input {
     padding: 20px;
@@ -64,20 +65,31 @@ input#pwd-length {
 
 .pwd-gen-input {
     /* background-color: rgba(46, 139, 86, 0.548); */
-    height: 80%;
+    height: 70%;
     width: 95%;
 }
 
-.logo {
-    /* background-color: ivory; */
+.pwd-header {
     height: 10%;
-    /* background-color: rgba(105, 90, 205, 0.541); */
     width: 95%;
     display: flex;
-    justify-content: center;
+    padding: 1.2rem;
+    justify-content: space-between;
     align-items: center;
-    font-size: 1.5rem;
-    color: ivory;
+}
+
+.logo {
+    width: 90%;
+    font-size: 1.1rem;
+    background-color: rebeccapurple;
+    border-radius: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.copy-btn {
+    width: 8%;
+    height: 100%;
 }
 
 .logo h1 {

@@ -9,29 +9,18 @@
 </head>
 <body>
     <main>
-        <div class="logo">
-            <h1>Password Generator</h1>
+        <div class="pwd-header">
+            <div class="logo">
+                <h1>Skfjasklfj2@@324!#asdasdasdasdsadSAfaafK</h1>
+            </div>
+            <div class="copy-btn"><button>Cpy</button></div>
         </div>
         <div class="pwd-gen-input">
-            <div>
-                <span>Length of Password:</span>
-                <input type="number" id="pwd-length">
-            </div>
-            <div>
-                <span>Contains UpperCase?</span>
-            <input type="checkbox" name="contains-uppercase" id="contains-uppercase">
-            </div>
-            <div>
-                <span>Special Character?</span>
-                <input type="checkbox" name="contains-special-char" id="contains-special-char">
-            </div>
-            <div>
-                <span>Contains Numeral?</span>
-                <input type="checkbox" name="contains-numeral" id="contains-numeral">
-            </div>
-            <div>
-                <input type="submit" id="submit" value="Generate">
-            </div>
+            <div class="form-control"><label for="pwd-len">Password Length</label><input id="pwd-len" type="number" min="4" max="40"></div>
+            <div class="form-control"><label for="upper">Contain Uppercase Letter</label><input id="upper" type="checkbox"></div>
+            <div class="form-control"><label for="lower">Contain Lowercase Letter</label><input id="lower" type="checkbox"></div>
+            <div class="form-control"><label for="number">Contains Number</label><input id="number " type="checkbox"></div>
+            <div class="form-control"><label for="symbol">Contains Sumbol</label><input id="symbol" type="checkbox"></div>
         </div>
     </main>
 </body>
