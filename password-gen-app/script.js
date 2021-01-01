@@ -47,13 +47,20 @@ function generatePassword(length, containsUpperLtrs, containsLowerLtrs,
     let password = "";
 
     for (i=0; i<length; i++) {
-        containsUpperLtrs && password.length < length ? password += getUpperCase() : "";
-        containsLowerLtrs && password.length < length ? password += getLowerCase() : "";
-        containsNumbers && password.length < length ? password +=  getNumber() : "";
-        containsSymbols && password.length < length ? password += getSymbol() : "";
+        password += getNextPwdChar();
     }
 
     return password;
+}
+
+function getNextPwdChar() {
+    const nextPwdCharCandidates = [];
+    nextPwdCharCandidates.push(getUpperCase());
+    nextPwdCharCandidates.push(getLowerCase());
+    nextPwdCharCandidates.push(getNumber());
+    nextPwdCharCandidates.push(getSymbol());
+
+    return extractRandom(nextPwdCharCandidates);
 }
 
 function getLowerCase() {
