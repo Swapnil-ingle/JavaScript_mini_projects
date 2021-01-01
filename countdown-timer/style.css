@@ -77,6 +77,11 @@ h2 {
     border-radius: 2px;
 }
 
+.resetTimerBtn:hover {
+    cursor: pointer;
+    color: green;
+}
+
 .resetFormContainer {
     display: flex;
     flex-wrap: wrap;
@@ -99,6 +104,11 @@ h2 {
     border: none;
     font-size: 2.4rem;
     color: #583d72;
+}
+
+.resetFormContainer button:hover {
+    cursor: pointer;
+    color: green;
 }
 
 /* .resetFormContainer input#resetCaptionInput {
