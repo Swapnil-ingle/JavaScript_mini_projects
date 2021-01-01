@@ -1,5 +1,8 @@
 ## Password Generator App
 
+A basic password generator app which creates password according to input options like length, contains uppercase, lowercase, number, symbol.
+
+Click [here](https://rawgit.com/Swapnil-ingle/JavaScript_mini_projects/main/password-gen-app/index.html) to interact...
 
 ## Requirement
 
@@ -10,4 +13,3 @@
 > 2. Contains Uppercase
 > 3. Contains Special Character
 > 4. Contains Numeral
-3. Should create a statement that helps remember the generated password
