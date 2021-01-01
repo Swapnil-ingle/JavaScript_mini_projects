@@ -31,14 +31,8 @@ main {
     20px 20px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* .pwd-gen-input div * {
-    display: block;
-    margin: 15px 0;
-} */
-
 .pwd-gen-input {
   padding: 20px;
-  /* width: 100%; */
   border: none;
   display: flex;
   flex-direction: column;
@@ -46,13 +40,6 @@ main {
   height: 70%;
   width: 95%;
   padding: 5rem 20px;
-}
-
-input#contains-uppercase,
-input#contains-special-char,
-input#contains-numeral {
-  height: 30px;
-  width: 30px;
 }
 
 input#submit {
@@ -68,11 +55,6 @@ input#pwd-length {
   height: 35px;
 }
 
-.pwd-gen-input {
-  /* background-color: rgba(46, 139, 86, 0.548); */
- 
-}
-
 .pwd-header {
   height: 10%;
   width: 95%;
@@ -86,7 +68,7 @@ input#pwd-length {
   width: 90%;
   font-size: 1.1rem;
   background-color: rebeccapurple;
-  border-radius: 10px;
+  border-radius: 3px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -98,12 +80,13 @@ input#pwd-length {
 .copy-btn button {
   background-color: transparent;
   border: none;
-  color: ivory;
+  color: #ecb602;
   font-size: 2rem;
 }
 
 .copy-btn button:hover {
   cursor: pointer;
+  color: ivory;
 }
 
 .pwd-output h1 {
@@ -132,7 +115,25 @@ input#pwd-length {
   background-color: #ecb602;
 }
 
+.generate button:hover {
+  cursor: pointer;
+  background-color:#f39c12;
+}
+
 .form-control {
   display: flex;
   justify-content: space-between;
+}
+
+.form-control input {
+  height: 30px;
+  width: 30px;
+  border: none;
+  border-radius: 3px;
+  font-size: 1rem;
+  padding-left: 10px;
+}
+
+#pwd-len {
+  width: 60px;
 }
