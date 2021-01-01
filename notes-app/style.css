@@ -31,6 +31,7 @@ body {
     padding: 1rem 0.5rem;
     display: flex;
     justify-content: flex-end;
+    border-bottom: 4px black solid;
 }
 
 .notes .tools button {
