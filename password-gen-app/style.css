@@ -1,34 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap");
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #7f5a83;
-    background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #7f5a83;
+  background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
 }
 
 main {
-   background-color: rgb(54, 27, 82);
-   color: ivory;
-   width: 500px;
-   height: 600px;
-   border-radius: 10px;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   overflow: hidden;
-   padding: 5px;
-   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4), 
-   20px 20px 30px rgba(0, 0, 0, 0.2);
+  background-color: rgb(54, 27, 82);
+  color: ivory;
+  width: 500px;
+  height: 600px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 5px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4),
+    20px 20px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* .pwd-gen-input div * {
@@ -37,68 +37,102 @@ main {
 } */
 
 .pwd-gen-input {
-    padding: 20px;
-    width: 100%;
-    border: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  padding: 20px;
+  /* width: 100%; */
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 70%;
+  width: 95%;
+  padding: 5rem 20px;
 }
 
-input#contains-uppercase, input#contains-special-char, input#contains-numeral {
-    height: 30px;
-    width: 30px;
+input#contains-uppercase,
+input#contains-special-char,
+input#contains-numeral {
+  height: 30px;
+  width: 30px;
 }
 
 input#submit {
-    margin-top: auto;
-    height: 80px;
-    width: 100%;
-    font-size: 25px;
-    font-weight: bold;
+  margin-top: auto;
+  height: 80px;
+  width: 100%;
+  font-size: 25px;
+  font-weight: bold;
 }
 
 input#pwd-length {
-    width: 100%;
-    height: 35px;
+  width: 100%;
+  height: 35px;
 }
 
 .pwd-gen-input {
-    /* background-color: rgba(46, 139, 86, 0.548); */
-    height: 70%;
-    width: 95%;
+  /* background-color: rgba(46, 139, 86, 0.548); */
+ 
 }
 
 .pwd-header {
-    height: 10%;
-    width: 95%;
-    display: flex;
-    padding: 1.2rem;
-    justify-content: space-between;
-    align-items: center;
+  height: 10%;
+  width: 95%;
+  display: flex;
+  padding: 1.2rem;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.logo {
-    width: 90%;
-    font-size: 1.1rem;
-    background-color: rebeccapurple;
-    border-radius: 10px;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.pwd-output {
+  width: 90%;
+  font-size: 1.1rem;
+  background-color: rebeccapurple;
+  border-radius: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.copy-btn {
-    width: 8%;
-    height: 100%;
+.copy-btn { 
+  width: 8%;
 }
 
-.logo h1 {
-    margin: 0;
-    padding: 0;
+.copy-btn button {
+  background-color: transparent;
+  border: none;
+  color: ivory;
+  font-size: 2rem;
+}
+
+.copy-btn button:hover {
+  cursor: pointer;
+}
+
+.pwd-output h1 {
+  margin: 0;
+  padding: 0 10px;
 }
 
 .pwd-gen-input span {
-    font-weight: normal;
-    font-size: 1.5rem;
-    color: black;
+  font-weight: normal;
+  font-size: 1.5rem;
+  color: black;
+}
+
+.generate {
+  width: 90%;
+}
+
+.generate button {
+  height: 4rem;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: inherit;
+  color: #0d324d;
+  background-color: #ecb602;
+}
+
+.form-control {
+  display: flex;
+  justify-content: space-between;
 }
