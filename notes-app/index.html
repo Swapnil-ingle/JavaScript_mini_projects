@@ -20,7 +20,9 @@
                 <button class="preview hidden"><i class="fas fa-eye"></i></button>
             </div>
         <div class="textarea-display hidden"></div>
-        <textarea placeholder="1. Start Typing 2. Click preview (eye) icon 3. Save (Markdown syntax supported)" class="hidden"></textarea>
+        <!-- Added additional spaces as a hack for multiline placeholder -->
+        <textarea placeholder=
+            "1. Start Typing                       2. Click preview (eye) icon                              3. Save                   (Markdown syntax supported)" class="hidden"></textarea>
         <div class="main scrollbar-hidden">
             <h2>Saved Notes</h2>
             <div id="notes-list">
