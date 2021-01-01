@@ -4,8 +4,8 @@ const minsEl = document.getElementById('mins');
 const secondsEl = document.getElementById('seconds');
 const resetTimerBtn = document.getElementById('resetTimerBtn');
 
-const defTargetDate = '25 Dec 2020';
-const defCaption = 'Days till chirstmas';
+const defTargetDate = '25 Dec 2021';
+const defCaption = 'Days Till Chirstmas';
 
 var targetDate = localStorage.getItem('targetDate') == null ? defTargetDate : localStorage.getItem('targetDate');
 
