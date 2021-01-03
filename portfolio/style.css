@@ -82,6 +82,7 @@ main {
     align-items: center;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
     transition: .3s;
+    font-weight: bold;
 }
 
 /* Main Responsive */
