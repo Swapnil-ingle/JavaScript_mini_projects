@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9d29d;
+    background-image: linear-gradient(315deg, #f9d29d 0%, #ffd8cb 74%);
+}
+
+nav {
+    background-color: #63d471;
+    background-image: linear-gradient(315deg, #63d471 0%, #233329 10%);
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+nav h1,h2 {
+    color: ivory;
+    padding-left: 2rem;
+}
+
+nav h1 {
+    font-size: 2.5rem;
+}
+
+nav h2 {
+    font-size: 1.3rem;
+}
+
+/* Main Section */
+
+main {
+    background-color: rgba(255, 68, 0, 0.377);
+    height: 550px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards-wrapper {
+    background-color: rgba(126, 252, 0, 0.548);
+    width: 85%;
+    height: 80%;
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "card1 card2 card2 card3"
+        "card4 card5 card6 card7"
+        "card8 card9 card9 card10";
+}
+
+.card {
+    background-color: lightseagreen;
+    margin: 0.5rem;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card1 {
+    grid-area: card1;
+}
+
+.card2 {
+    grid-area: card2;
+}
+
+.card3 {
+    grid-area: card3;
+}
+
+.card4 {
+    grid-area: card4;
+}
+
+.card5 {
+    grid-area: card5;
+}
+
+.card6 {
+    grid-area: card6;
+}
+
+.card7 {
+    grid-area: card7;
+}
+
+.card8 {
+    grid-area: card8;
+}
+
+.card9 {
+    grid-area: card9;
+}
+
+.card10 {
+    grid-area: card10;
+}
