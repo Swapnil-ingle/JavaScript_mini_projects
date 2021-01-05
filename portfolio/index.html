@@ -15,16 +15,163 @@
     </nav>
     <main>
         <div class="cards-wrapper scrollbar-hidden">
-            <div id="card1" class="card" onclick="clickedCard(this)"><h1>Countdown</h1></div>
-            <div id="card2" class="card" onclick="clickedCard(this)"><h1>Quiz App</h1></div>
-            <div id="card3" class="card" onclick="clickedCard(this)"><h1>Recipe</h1></div>
-            <div id="card4" class="card" onclick="clickedCard(this)"><h1>Notes App</h1></div>
-            <div id="card5" class="card" onclick="clickedCard(this)"><h1>Todo App</h1></div>
-            <div id="card6" class="card" onclick="clickedCard(this)"><h1>Movies App</h1></div>
-            <div id="card7" class="card" onclick="clickedCard(this)"><h1>Github</h1></div>
-            <div id="card8" class="card" onclick="clickedCard(this)"><h1>Drawing App</h1></div>
-            <div id="card9" class="card" onclick="clickedCard(this)"><h1>Password Gen</h1></div>
-            <div id="card10" class="card" onclick="clickedCard(this)"><h1>Weather</h1></div>
+            <div id="card1" class="card card-active" onclick="clickedCard(this)">
+                <h1>Countdown</h1>
+                <div class="card-info">
+                    <h4>
+                        Simple countdown application that countsdown to a target date.
+                        Made with HTML, CSS and JS and ❤️.
+                    </h4>
+                    <button>Click here to interact</button>
+                </div>
+            </div>
+            <div id="card2" class="card" onclick="clickedCard(this)">
+                <h1>Quiz App</h1>
+                <div class="card-info">
+                    <h4>
+                        A simple quiz application.
+                        Made with HTML, CSS and JS and ❤️.
+                    </h4>
+                    <button>Click here to interact</button>
+                </div>
+            </div>
+            <div id="card3" class="card" onclick="clickedCard(this)">
+                <h1>Recipe</h1>
+                <div class="card-info">
+                    <h4>
+                        A recipe application integrated with themealdb API. 
+                        Made with HTML, CSS and JS and ❤️.
+                    </h4>
+                    <span>
+                        <h4>Functions:</h4>
+                        <ol>
+                            <li>Integrated with live DB TheMealDB.com</li>
+                            <li>Mark favorite to your recipe (Stored locally on browser)</li>
+                            <li>Search recipes by name.</li>
+                            <li>Loads a new random recipe from the DB when refreshed.</li>
+                        </ol>
+                    </span>
+                    <button>Click here to interact</button>
+                </div>
+            </div>
+            <div id="card4" class="card" onclick="clickedCard(this)">
+                <h1>Notes App</h1>
+                <div class="card-info">
+                    <h4>
+                        A basic note app which can persist notes written by user, edit, delete and add new notes.
+                        Made with HTML, CSS and JS and ❤️.
+                    </h4>
+                    <span>
+                        <h4>Functions:</h4>
+                        <ol>
+                            <li>Create/Read/Update/Delete note functionality</li>
+                            <li>Markdown Syntax supported</li>
+                        </ol>
+                    </span>
+                    <button>Click here to interact</button>
+                </div>
+            </div>
+            <div id="card5" class="card" onclick="clickedCard(this)">
+                <h1>Todo App</h1>
+                <div class="card-info">
+                    <h4>
+                        A basic todo-app which can persist todo items written by user, edit, delete, add new, and mark as complete the todos.
+                        Made with HTML, CSS and JS and ❤️.
+                    </h4>
+                    <span>
+                        <h4>Functions:</h4>
+                        <ol>
+                            <li>Create/Read/Update/Delete/Mark As Complete todos.</li>
+                            <li>Persist to local browser storage</li>
+                        </ol>
+                    </span>
+                    <button>Click here to interact</button>
+                </div>
+            </div>
+            <div id="card6" class="card" onclick="clickedCard(this)">
+                <h1>Movies App</h1>
+                <div class="card-info">
+                    <h4>
+                        A movie library application integrated with public API (TMDB) made with HTML, CSS and JS and ❤️.
+                    </h4>
+                    <span>
+                        <h4>Highlights:</h4>
+                        <ol>
+                            <li>Discover random movies</li>
+                            <li>Search movies</li>
+                            <li>Backed with TMDB public API</li>
+                        </ol>
+                    </span>
+                    <button>Click here to interact</button>
+                </div>
+            </div>
+            <div id="card7" class="card" onclick="clickedCard(this)">
+                <h1>Github</h1>
+                <div class="card-info">
+                    <h4>
+                        A Github profile app, which summarizes a Github account details and allows to search via Github username, made with HTML, CSS and JS and ❤️.
+                    </h4>
+                    <span>
+                        <h4>Highlights:</h4>
+                        <ol>
+                            <li>Github profile summary having repos, twitter account link, location, etc. </li>
+                            <li>Show profile picture.</li>
+                            <li>Allow search by username capability.</li>
+                        </ol>
+                    </span>
+                    <button>Click here to interact</button>
+                </div>
+                
+            </div>
+            <div id="card8" class="card" onclick="clickedCard(this)">
+                <h1>Drawing App</h1>
+                <div class="card-info">
+                    <h4>
+                        A basic drawing application that uses JavaScript canvas functions to enable drawing activties. 
+                        Made with HTML, CSS and JS and ❤️.
+                    </h4>
+                    <span>
+                        <h4>Highlights:</h4>
+                        <ol>
+                            <li>Basic drawing</li>
+                            <li>Can choose colors</li>
+                            <li>Clear button</li>
+                        </ol>
+                    </span>
+                    <button>Click here to interact</button>
+                </div>
+            </div>
+            <div id="card9" class="card" onclick="clickedCard(this)">
+                <h1>Password</h1>
+                <div class="card-info">
+                    <h4>
+                        A basic password generator app which creates password according to input options like length, contains uppercase, lowercase, number, symbol.
+                        Made with HTML, CSS and JS and ❤️.
+                    </h4>
+                    <span>
+                        <h4>Highlights:</h4>
+                        <ol>
+                            <li>Generate password of 'n' length.</li>
+                            <li>Password generation rules should be defined by the end-user.</li>
+                            <li>Password Generation Rules: 
+                                1. Length of Password, 
+                                2. Contains Uppercase, 
+                                3. Contains Special Character, 
+                                4. Contains Numeral</li>
+                        </ol>
+                    </span>
+                    <button>Click here to interact</button>
+                </div>
+            </div>
+            <div id="card10" class="card" onclick="clickedCard(this)">
+                <h1>Weather</h1>
+                <div class="card-info">
+                    <h4>
+                        To be added...
+                    </h4>
+                    <button>Click here to interact</button>
+                </div>
+            </div>
         </div>
     </main>
 </body>
