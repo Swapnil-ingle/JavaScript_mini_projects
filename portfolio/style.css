@@ -27,6 +27,10 @@ nav h1,h2 {
     padding-left: 2rem;
 }
 
+nav a {
+    color: ivory;
+}
+
 nav h1,h2:hover {
     cursor: pointer;
 }
@@ -294,6 +298,16 @@ main {
     padding: 15px 0;
     box-shadow: 5px 5px 5px 1px rgba(0, 0, 0, 0.4);
     font-size: 15px;
+    transition: transform 0.5s;
+}
+
+.card-info button:hover {
+    cursor: pointer;
+    background: -webkit-gradient(linear, left top, right bottom, from(#a40606), to(#d98324));
+}
+
+#disabled {
+    background: -webkit-gradient(linear, left top, right bottom, from(#646464), to(#f5f5f4));
 }
 
 .card-info span {
