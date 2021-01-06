@@ -318,3 +318,31 @@ main {
 .card-info ol {
     padding: 0 2rem;
 }
+
+footer {
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    color: ivory;
+    opacity: 0.8;
+}
+
+footer a:link,a {
+    color: ivory;
+    text-decoration: none;
+}
+
+footer:hover {
+    opacity: 1;
+}
+
+.blink {
+    animation: blinker 2s linear infinite;
+    color: ivory;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}
