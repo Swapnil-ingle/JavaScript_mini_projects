@@ -47,8 +47,9 @@ input {
 input::placeholder {
     padding-left: 9px;
     font-size: 12px;
-    color: #faaf7aa2;
+    color: ivory;
     font-style: italic;
+    opacity: 0.5;
 }
 
 .search-btn {
