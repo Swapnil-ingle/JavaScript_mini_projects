@@ -13,7 +13,16 @@ Learning JS by creating JS based (mini) projects.
 7. [GitHub Profile Summary App](https://rawgit.com/Swapnil-ingle/JavaScript_mini_projects/main/github-profiles-app/index.html)
 8. [Drawing App](https://rawgit.com/Swapnil-ingle/JavaScript_mini_projects/main/drawing-app/index.html)
 9. [Password Generator](https://rawgit.com/Swapnil-ingle/JavaScript_mini_projects/main/password-gen-app/index.html)
-10. [Portfolio App](https://rawgit.com/Swapnil-ingle/JavaScript_mini_projects/main/portfolio/index.html)
+10. [Weather App](https://rawgit.com/Swapnil-ingle/JavaScript_mini_projects/main/weather-app/index.html)
+
+
+## Bonus App 🥳🙀
+
+[Portfolio](https://rawgit.com/Swapnil-ingle/JavaScript_mini_projects/main/portfolio/index.html)
+
+This is the collection 🗃 of all the above applications with nice animations and little descriptions.
+
+Learned and used CSS-Grid concept for this one.
 
 ## Disclaimer
 
