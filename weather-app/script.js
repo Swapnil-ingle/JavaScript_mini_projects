@@ -21,10 +21,12 @@ function addWeatherToPage(data) {
     weather.classList.add('weather');
 
     weather.innerHTML = `
-        <small>There are </small>
-        <h2>${temp}°C</h2>
-        <p>in ${search.value}</p>
+        <h2><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"/> ${temp}°C</h2>
+        <small>${data.weather[0].main}</small>
     `;
+
+    // clean up
+    main.innerHTML = "";
 
     main.appendChild(weather);
 }

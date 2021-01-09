@@ -5,6 +5,38 @@
 }
 
 body {
+    background: linear-gradient(300deg, #CED1D6, #BFc0c0);
     font-family: 'Poppins', sans-serif;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+input {
+    border-radius: 25px;
+    border: none;
+    background-color: ivory;
+    padding: 1rem;
+    font-family: inherit;
+    box-shadow: 0 4px rgba(0, 0, 0, 0.2);
+    min-width: 300px;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+}
+
+.weather {
+    text-align: center;
+}
+
+.weather h2 {
+    font-size: 2rem;
+    margin-bottom: 0;
+    display: flex;
+    align-items: center;
 }
