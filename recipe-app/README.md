@@ -1,4 +1,4 @@
-## Quiz App
+## Recipe App
 
 A recipe application integrated with themealdb API - based in good ol' JS, HTML and CSS.
 
