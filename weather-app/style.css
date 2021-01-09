@@ -5,7 +5,7 @@
 }
 
 body {
-    background: linear-gradient(300deg, #CED1D6, #BFc0c0);
+    /* background: linear-gradient(300deg, #CED1D6, #BFc0c0); */
     font-family: 'Poppins', sans-serif;
     margin: 0;
     display: flex;
@@ -13,9 +13,12 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    background-size: cover;
+    background-image: url(./imgs/bg-img.jpg);
 }
 
 input {
+    color: black;
     border-radius: 25px;
     border: none;
     background-color: ivory;
@@ -24,6 +27,13 @@ input {
     box-shadow: 0 4px rgba(0, 0, 0, 0.2);
     min-width: 300px;
     font-size: 1rem;
+    /* Glass Styling */
+    background: rgba( 255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 11.5px );
+    -webkit-backdrop-filter: blur( 11.5px );
+    border-radius: 5px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
 input:focus {
@@ -35,8 +45,47 @@ input:focus {
 }
 
 .weather h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     margin-bottom: 0;
+    margin-top: 0;
     display: flex;
     align-items: center;
+}
+
+.placename {
+    text-align: center;
+    color: ivory;
+    margin-top: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.363);
+}
+
+.weather h1 {
+    margin: 3rem 0;
+    color: #000000;
+}
+
+.app-title {
+    margin-top: 0;
+    text-align: center;
+    color: #ecf0f1;
+}
+
+/* Card Styling */
+
+.card {
+    padding: 2rem 1rem;
+    background: rgba( 255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 11.5px );
+    -webkit-backdrop-filter: blur( 11.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.temp-details {
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

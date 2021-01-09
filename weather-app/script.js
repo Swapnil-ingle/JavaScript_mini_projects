@@ -5,12 +5,18 @@ const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search');
 
+getWeatherByLocation("Delhi");
+
 async function getWeatherByLocation(location) {
     const resp = await fetch(url(location), { origin: "cors" });
     const respData = await resp.json();
 
-    console.log(respData, KtoC(respData.main.temp));
+    if (respData.cod == "404") {
+        alert("No results found!");
+        return;
+    }
 
+    console.log(respData, KtoC(respData));
     addWeatherToPage(respData);
 }
 
@@ -21,8 +27,12 @@ function addWeatherToPage(data) {
     weather.classList.add('weather');
 
     weather.innerHTML = `
-        <h2><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"/> ${temp}°C</h2>
-        <small>${data.weather[0].main}</small>
+        <h1 class="placename">${data.name}</h1>
+        <div class="temp-details">
+            <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png"/>
+            <h2>${temp}°C</h2>
+        </div>
+        <small>(${data.weather[0].main})</small>
     `;
 
     // clean up
