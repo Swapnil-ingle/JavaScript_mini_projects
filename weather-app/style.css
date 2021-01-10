@@ -5,7 +5,6 @@
 }
 
 body {
-    /* background: linear-gradient(300deg, #CED1D6, #BFc0c0); */
     font-family: 'Poppins', sans-serif;
     margin: 0;
     display: flex;
@@ -15,6 +14,7 @@ body {
     min-height: 100vh;
     background-size: cover;
     background-image: url(./imgs/bg-img.jpg);
+    display: flex;
 }
 
 input {
@@ -88,4 +88,35 @@ input:focus {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+/* Footer Styling */
+
+footer {
+    position: fixed;
+    bottom: 5px;
+    right: 10px;
+    color: ivory;
+    opacity: 0.8;
+    font-size: 1.3rem;
+}
+
+footer a:link,a {
+    color: ivory;
+    text-decoration: none;
+}
+
+footer:hover {
+    opacity: 1;
+}
+
+.blink {
+    animation: blinker 2s linear infinite;
+    color: ivory;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
 }
