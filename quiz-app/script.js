@@ -189,6 +189,10 @@ function createQuizItem(questionData) {
 }
 
 function parseString(question) {
+    if (question == null || question == undefined) {
+        return;
+    }
+
     question = question.replaceAll("&quot;", '"');
     question = question.replaceAll("&#039;", "'");
     return question;
