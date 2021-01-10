@@ -68,7 +68,8 @@ function _loadNextQuestion() {
 
 function _changeNextButtonToSubmit() {
     submitBtnEl.innerText = "Submit";
-    submitBtnEl.style.backgroundColor = "#6F1E51";
+    submitBtnEl.style.color = "#027cc8";
+    submitBtnEl.style.backgroundColor = "rgba(255, 255, 240, 0.25)";
     submitBtnActingAsNext = false;
 }
 
@@ -79,13 +80,15 @@ function _changeSubmitButtonToNext() {
     }
 
     submitBtnEl.innerText = "Next";
-    submitBtnEl.style.backgroundColor = "#16a085";
+    submitBtnEl.style.backgroundColor = "#16a08593";
+    submitBtnEl.style.color = "black";
     submitBtnActingAsNext = true;
 }
 
 function _changeSubmitButtonToFinished() {
     submitBtnEl.innerText = "Finish";
-    submitBtnEl.style.backgroundColor = "gray";
+    submitBtnEl.style.backgroundColor = "rgba(0, 0, 0, 0.80)";
+    submitBtnEl.style.color = "ivory";
     submitBtnActingAsNext = true;
 }
 

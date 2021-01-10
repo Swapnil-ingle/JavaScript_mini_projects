@@ -11,8 +11,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #eec0c6;
-    background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
+    background-size: cover;
+    background-image: url(./img/bg.jpg);
 }
 
 .quiz-container {
@@ -23,7 +23,6 @@ body {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border: solid 8px #2f3640;
 }
 
 .quiz-container-inner {
@@ -33,6 +32,8 @@ body {
 
 h2 {
     margin: 0;
+    font-size: 2rem;
+    color: white;
 }
 
 ul li {
@@ -40,10 +41,12 @@ ul li {
     font-weight: lighter;
     margin: 1rem 0;
     vertical-align: center;
+    display: flex;
+    align-items: center;
 }
 
 ul:hover li:hover label:hover {
-    font-weight: normal;
+    font-weight: bold;
     cursor: pointer;
 }
 
@@ -62,13 +65,73 @@ button {
     display: block;
     padding: 1.3rem;
     border: none;
-    color: white;
+    color: #027bc8;
     font-family: inherit;
     font-size: 1.2rem;
-    background-color: #6F1E51;
+    font-weight: bold;
+}
+
+button:focus {
+    outline: none;
 }
 
 button:hover {
-    background-color: #3d112d;
+    background: #027cc893;
     cursor: pointer;
+    color: ivory;
+    border: 1px solid rgba(255, 255, 255, 0.685);
+}
+
+.glass {
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 15.5px );
+    -webkit-backdrop-filter: blur( 15.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.40 );
+}
+
+.glass-submit-btn {
+    background-color: rgba(255, 255, 240, 0.25);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5.5px );
+    -webkit-backdrop-filter: blur( 5.5px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.glass-next-btn {
+    background: #16a08488;
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5.5px );
+    -webkit-backdrop-filter: blur( 5.5px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    color: ivory;
+}
+
+/* Footer Styling */
+
+footer {
+    position: fixed;
+    top: 5px;
+    right: 10px;
+    opacity: 0.8;
+}
+
+footer a:link,a {
+    color: ivory;
+    text-decoration: none;
+}
+
+footer:hover {
+    opacity: 1;
+}
+
+.blink {
+    animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
 }
