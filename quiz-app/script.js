@@ -171,18 +171,18 @@ function createQuizItem(questionData) {
     options = shuffle(options);
 
     const question = {
-        question: parseQuestion(questionData.question),
-        "option-a": options[0],
-        "option-b": options[1],
-        "option-c": options[2],
-        "option-d": options[3],
-        correct: questionData.correct_answer
+        question: parseString(questionData.question),
+        "option-a": parseString(options[0]),
+        "option-b": parseString(options[1]),
+        "option-c": parseString(options[2]),
+        "option-d": parseString(options[3]),
+        correct: parseString(questionData.correct_answer)
     };
 
     return question;
 }
 
-function parseQuestion(question) {
+function parseString(question) {
     question = question.replaceAll("&quot;", '"');
     question = question.replaceAll("&#039;", "'");
     return question;
