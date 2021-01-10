@@ -140,6 +140,12 @@ function _reset() {
 
 async function genQuiz() {
     const numberOfQAs = document.getElementById("num-of-qas").value;
+
+    if (numberOfQAs <= 0) {
+        alert("Number of questions cannot be less than zero!");
+        return;
+    }
+
     const typeOfQAs = document.getElementById("type-of-qas").value; 
     const difficultyOfQAs = document.getElementById("difficulty-of-qas").value;
 
