@@ -1,21 +1,4 @@
-const quizData = [
-    {
-        "question": "What is the value of pi?",
-        "option-a": "3.14",
-        "option-b": "5.36",
-        "option-c": "8.69",
-        "option-d": "12.57",
-        "correct": "option-a"
-    },
-    {
-        "question": "Who is the president of the United States?",
-        "option-a": "Mr. Dolaand Trump",
-        "option-b": "Mr. Joe Rogan",
-        "option-c": "Mr. Elon Musk",
-        "option-d": "Mr. Joe Biden",
-        "correct": "option-d"
-    }
-];
+let quizData = [];
 
 let questionEl = document.getElementById("question");
 let optionAEl = document.getElementById("opt-a");
@@ -30,11 +13,17 @@ let totalCorrect = 0;
 let submitBtnActingAsNext = false;
 
 function loadQuiz() {
+    const quizQuestionContainerEl = document.getElementById('quiz-question-container');
+    const submitEl = document.getElementById('submit');
+
+    quizQuestionContainerEl.classList.remove('hide');
+    submitEl.classList.remove('hide');
+
     _renderCurrQuizData();
 };
 
 function submit() {
-    var selectedAns = _getSelected();
+    var selectedAns = _getSelectedOption();
 
     if (selectedAns == undefined) {
         alert("Select atleast one answer");
@@ -48,7 +37,7 @@ function submit() {
         return;
     }
 
-    if (selectedAns == quizData[currQuesNum].correct) {
+    if (quizData[currQuesNum][selectedAns] == quizData[currQuesNum].correct) {
         totalCorrect++;
     }
 
@@ -95,24 +84,24 @@ function _changeSubmitButtonToFinished() {
 function _populateOptionResults() {
     let correctOption = quizData[currQuesNum].correct;
 
-    _populateResultForOption("option-a-result", "option-a", correctOption);
-    _populateResultForOption("option-b-result", "option-b", correctOption);
-    _populateResultForOption("option-c-result", "option-c", correctOption);
-    _populateResultForOption("option-d-result", "option-d", correctOption);
+    _populateResultForOption("option-a-result", quizData[currQuesNum]["option-a"], correctOption);
+    _populateResultForOption("option-c-result", quizData[currQuesNum]["option-c"], correctOption);
+    _populateResultForOption("option-b-result", quizData[currQuesNum]["option-b"], correctOption);
+    _populateResultForOption("option-d-result", quizData[currQuesNum]["option-d"], correctOption);
 }
 
-function _populateResultForOption(option, currOption, correctOption) {
-    let optionEl = document.getElementById(option);
+function _populateResultForOption(optionResult, currOption, correctOption) {
+    let optionResultEl = document.getElementById(optionResult);
 
     // Set check or uncheck mark depending on whether the option is correct
     if (currOption == correctOption) {
-        optionEl.innerText = "check_box";
-        optionEl.style.color = "#27ae60";
+        optionResultEl.innerText = "check_box";
+        optionResultEl.style.color = "#27ae60";
         return;
     }
 
-    optionEl.innerText = "cancel";
-    optionEl.style.color = "#c0392b"; 
+    optionResultEl.innerText = "cancel";
+    optionResultEl.style.color = "#c0392b"; 
 }
 
 function _resetResultIcons() {
@@ -129,7 +118,7 @@ function _renderCurrQuizData() {
     optionDEl.innerText = quizData[currQuesNum]["option-d"];
 }
 
-function _getSelected() {
+function _getSelectedOption() {
     let answerId = undefined;
 
     document.getElementsByName("option").forEach(answer => {
@@ -146,10 +135,90 @@ function _showFinalResults() {
 }
 
 function _reset() {
-    currQuesNum = 0;
-    totalCorrect = 0;
-    _changeNextButtonToSubmit();
+    window.location.reload();
+}
+
+async function genQuiz() {
+    const numberOfQAs = document.getElementById("num-of-qas").value;
+    const typeOfQAs = document.getElementById("type-of-qas").value; 
+    const difficultyOfQAs = document.getElementById("difficulty-of-qas").value;
+
+    let quizApiURL = `https://opentdb.com/api.php?amount=${numberOfQAs}`;
+    typeOfQAs != "any" ? quizApiURL += `&type=${typeOfQAs}` : "";
+    difficultyOfQAs != "any" ? quizApiURL += `&difficulty=${difficultyOfQAs}` : "";
+
+    const fetchedQuizData = await loadQuizData(quizApiURL);
+
+    // Clear Generate Quiz Menu
+    _clearGenQuizSection();
+
+    fetchedQuizData.forEach(question => {
+        quizData.push(createQuizItem(question));
+    });
+
+    // Load into quizData arr
     loadQuiz();
 }
 
-loadQuiz();
+function createQuizItem(questionData) {
+    let options = [];
+
+    questionData.incorrect_answers.forEach(answer => {
+        options.push(answer);
+    });
+
+    options.push(questionData.correct_answer);
+    options = shuffle(options);
+
+    const question = {
+        question: parseQuestion(questionData.question),
+        "option-a": options[0],
+        "option-b": options[1],
+        "option-c": options[2],
+        "option-d": options[3],
+        correct: questionData.correct_answer
+    };
+
+    return question;
+}
+
+function parseQuestion(question) {
+    question = question.replaceAll("&quot;", '"');
+    question = question.replaceAll("&#039;", "'");
+    return question;
+}
+
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
+  }
+
+async function loadQuizData(quizApiURL) {
+    const respData = await fetch(quizApiURL);
+    const respJson = await respData.json();
+    return respJson.results;
+}
+
+function _clearGenQuizSection() {
+    const quizSelMenuEl = document.getElementById('quiz-selection-menu');
+    const genQuizBtnEl = document.getElementById('submit-gen-quiz');
+    const formControlEl = document.getElementById('form-control');
+
+    quizSelMenuEl.classList.add("hide");
+    genQuizBtnEl.classList.add("hide");
+    formControlEl.classList.add("hide");
+}

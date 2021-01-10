@@ -82,6 +82,18 @@ button:hover {
     border: 1px solid rgba(255, 255, 255, 0.685);
 }
 
+/* Glass Stylings */
+
+.glass-input {
+    background: rgba(255, 255, 255, 0.788);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5.5px );
+    -webkit-backdrop-filter: blur( 5.5px );
+    border-radius: 3px;
+    border: 1px solid rgba( 255, 255, 255, 0.40 );
+    font-size: 1rem;
+}
+
 .glass {
     background: rgba( 255, 255, 255, 0.25 );
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -97,6 +109,15 @@ button:hover {
     backdrop-filter: blur( 5.5px );
     -webkit-backdrop-filter: blur( 5.5px );
     border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.glass-gen-quiz-submit-btn {
+    background-color: rgba(0, 0, 0, 0.80);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5.5px );
+    -webkit-backdrop-filter: blur( 5.5px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    color: ivory;
 }
 
 .glass-next-btn {
@@ -134,4 +155,22 @@ footer:hover {
     50% {
         opacity: 0;
     }
+}
+
+/* Quiz selection menu Styling */
+
+.form-control {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+}
+
+.form-control label {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: ivory;
+}
+
+.hide {
+    display: none;
 }
