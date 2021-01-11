@@ -44,21 +44,29 @@ copyBtn.addEventListener('click', () => {
 
 function generatePassword(length, containsUpperLtrs, containsLowerLtrs, 
     containsNumbers, containsSymbols) {
-    let password = "";
+    let password = [];
 
-    for (i=0; i<length; i++) {
-        password += getNextPwdChar();
+    if (!containsUpperLtrs && !containsLowerLtrs 
+        && !containsNumbers && !containsSymbols) {
+            alert("Select atleast one contains rule!");
+            return;
     }
 
-    return password;
+    for (i=0; i<length; i++) {
+        password.push(getNextPwdChar(containsUpperLtrs, containsLowerLtrs, 
+            containsNumbers, containsSymbols));
+    }
+
+    return _shuffle(password).join("");
 }
 
-function getNextPwdChar() {
+function getNextPwdChar(containsUpperLtrs, containsLowerLtrs, 
+    containsNumbers, containsSymbols) {
     const nextPwdCharCandidates = [];
-    nextPwdCharCandidates.push(getUpperCase());
-    nextPwdCharCandidates.push(getLowerCase());
-    nextPwdCharCandidates.push(getNumber());
-    nextPwdCharCandidates.push(getSymbol());
+    containsUpperLtrs ? nextPwdCharCandidates.push(getUpperCase()) : "";
+    containsLowerLtrs ? nextPwdCharCandidates.push(getLowerCase()) : "";
+    containsNumbers ? nextPwdCharCandidates.push(getNumber()) : "";
+    containsSymbols ? nextPwdCharCandidates.push(getSymbol()) : "";
 
     return extractRandom(nextPwdCharCandidates);
 }
@@ -81,4 +89,23 @@ function getSymbol() {
 
 function extractRandom(inputArr) {
     return inputArr[Math.floor(Math.random() * inputArr.length)];
+}
+
+function _shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+  
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+  
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+  
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+  
+    return array;
 }
