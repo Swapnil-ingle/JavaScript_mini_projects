@@ -215,7 +215,7 @@ function shuffle(array) {
     }
   
     return array;
-  }
+}
 
 async function loadQuizData(quizApiURL) {
     const respData = await fetch(quizApiURL);
