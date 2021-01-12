@@ -148,9 +148,11 @@ async function genQuiz() {
 
     const typeOfQAs = document.getElementById("type-of-qas").value; 
     const difficultyOfQAs = document.getElementById("difficulty-of-qas").value;
+    const categoryOfQAs = document.getElementById("category-of-qas").value;
 
     let quizApiURL = `https://opentdb.com/api.php?amount=${numberOfQAs}`;
     typeOfQAs != "any" ? quizApiURL += `&type=${typeOfQAs}` : "";
+    categoryOfQAs != "any" ? quizApiURL += `&category=${categoryOfQAs}` : "";
     difficultyOfQAs != "any" ? quizApiURL += `&difficulty=${difficultyOfQAs}` : "";
 
     const fetchedQuizData = await loadQuizData(quizApiURL);
@@ -195,6 +197,7 @@ function parseString(question) {
 
     question = question.replaceAll("&quot;", '"');
     question = question.replaceAll("&#039;", "'");
+    question = question.replaceAll("&amp;", "&");
     return question;
 }
 

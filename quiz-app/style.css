@@ -92,6 +92,7 @@ button:hover {
     border-radius: 3px;
     border: 1px solid rgba( 255, 255, 255, 0.40 );
     font-size: 1rem;
+    margin-left: 1rem;
 }
 
 .glass {
@@ -163,6 +164,7 @@ footer:hover {
     display: flex;
     justify-content: space-between;
     padding: 0.8rem 0;
+    flex-wrap: wrap;
 }
 
 .form-control label {
