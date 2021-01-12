@@ -5,6 +5,12 @@ let optionAEl = document.getElementById("opt-a");
 let optionBEl = document.getElementById("opt-b");
 let optionCEl = document.getElementById("opt-c");
 let optionDEl = document.getElementById("opt-d");
+
+let optionALiEl = document.getElementById("opt-a-li");
+let optionBLiEl = document.getElementById("opt-b-li");
+let optionCLiEl = document.getElementById("opt-c-li");
+let optionDLiEl = document.getElementById("opt-d-li");
+
 const submitBtnEl = document.getElementById("submit");
 
 let currQuesNum = 0;
@@ -111,11 +117,24 @@ function _resetResultIcons() {
 }
 
 function _renderCurrQuizData() {
+    optionCLiEl.classList.remove("hide");
+    optionDLiEl.classList.remove("hide");
+
     questionEl.innerText = quizData[currQuesNum].question;
     optionAEl.innerText = quizData[currQuesNum]["option-a"];
     optionBEl.innerText = quizData[currQuesNum]["option-b"];
-    optionCEl.innerText = quizData[currQuesNum]["option-c"];
-    optionDEl.innerText = quizData[currQuesNum]["option-d"];
+
+    let optCText = quizData[currQuesNum]["option-c"];
+    if (optCText == null || optCText == undefined) {
+        optionCLiEl.classList.add("hide");
+    }
+    optionCEl.innerText = optCText;
+
+    let optDText = quizData[currQuesNum]["option-d"];
+    optionDEl.innerText = optDText
+    if (optDText == null || optDText == undefined) {
+        optionDLiEl.classList.add("hide");
+    }
 }
 
 function _getSelectedOption() {
@@ -157,6 +176,12 @@ async function genQuiz() {
 
     const fetchedQuizData = await loadQuizData(quizApiURL);
 
+    // If fetched data is empty show error
+    if (fetchedQuizData == null || fetchedQuizData == undefined || fetchedQuizData.length <= 0) {
+        alert("ERROR: No quiz questions found, try different options!");
+        return;
+    }
+
     // Clear Generate Quiz Menu
     _clearGenQuizSection();
 
@@ -196,7 +221,11 @@ function parseString(question) {
     }
 
     question = question.replaceAll("&quot;", '"');
+    question = question.replaceAll("&ldquo;", '"');
+    question = question.replaceAll("&rdquo;", '"');
     question = question.replaceAll("&#039;", "'");
+    question = question.replaceAll("&lsquo;", "'");
+    question = question.replaceAll("&rsquo;", "'");
     question = question.replaceAll("&amp;", "&");
     return question;
 }
